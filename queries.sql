@@ -18,7 +18,10 @@ LIMIT 10
 
 -- Find all customers that live in London, Madrid, or Brazil
 
-
+select customername from customers
+--where country = 'Madrid'
+where country = 'Germany'
+--where country = 'Brazil'
 
 -- Add a customer record for "The Shire", the contact name is "Bilbo Baggins" the address is -"1 Hobbit-Hole" in "Bag End", postal code "111" and the country is "Middle Earth"
 
@@ -27,6 +30,12 @@ select * from customers
 INSERT into customers (customername, contactname, address, city, postalcode, country) values ("The Shire", "Bilbo Baggins", "1 Hobbit-Hole", "Bag End", "111", "Middle Earth")
 
 -- Update Bilbo Baggins record so that the postal code changes to "11122"
+
+select * from customers
+
+UPDATE customers set postalcode = "11122" where contactname = 'Bilbo Baggins'
+
+--INSERT into customers (customername, contactname, address, city, postalcode, country) values ("The Shire", "Bilbo Baggins", "1 Hobbit-Hole", "Bag End", "111", "Middle Earth")
 
 -- (Stretch) Find a query to discover how many different cities are stored in the Customers table. Repeats should not be double counted
 
