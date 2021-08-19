@@ -4,24 +4,24 @@ const db = require('../../data/db-config')
 
 const getAll = async () => {
   // DO YOUR MAGIC
-  return db("budget")
+  return db("accounts")
 }
 
 const getById = async (id) => {
   // DO YOUR MAGIC
-  return db("budget").where("id", id).first()
+  return db("accounts").where("id", id).first()
 }
 
 const create = async ({account}) => {
   // DO YOUR MAGIC
-  const [id] = await db("budget").insert({account})
+  const [id] = await db("accounts").insert({account})
   return getById(id)
 
 }
 
 const updateById = async (id, {account}) => {
   // DO YOUR MAGIC
-  await db('budget').where("id", id).updateById({account})
+  await db('accounts').where("id", id).updateById({account})
   return getById(id)
 }
 
@@ -29,7 +29,7 @@ const deleteById = async(id) => {
   // DO YOUR MAGIC
   const deletedPost = await getById(id)
 
-  await db('budget').where("id", id).delete()
+  await db('accounts').where("id", id).delete()
   return deletedPost
 }
 
